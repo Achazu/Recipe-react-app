@@ -9,12 +9,16 @@ module.exports = function(env) {
   console.log(isDev, 'isDev');
 
   const config = {
-    entry: ["babel-polyfill", "./js/app.jsx"],
+    entry: ["babel-polyfill", "./js/main.jsx"],
     output: {
       filename: "out.js",
-      path: path.resolve(__dirname, "docs")
+	  path: path.resolve(__dirname, "docs"),
+	  publicPath: '/'
     },
-    mode: isDev ? 'development' : 'production',
+	mode: isDev ? 'development' : 'production',
+	devServer: {
+		historyApiFallback: true,
+	  },
     module: {
       rules: [
         {

@@ -1,9 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+import { Link } from 'react-router-dom';
+
 const Recipes = props => (
 	<div className='container'> 
 		<div className="row">
+			{console.log('test recipes props', props)}
+			
 			{props.recipes.map((recipe) => {
 				return (
 					<div className='col-md-4' style={{marginBottom:'2rem'}} key={recipe.recipe_id}>
@@ -18,7 +22,15 @@ const Recipes = props => (
 								Publisher: <span> {recipe.publisher} </span>
 								</p>
 							</div>
-							<button className='recipe_buttons'>View Recipe</button>
+
+							<button className='recipe_buttons'>
+								<Link to={{ 
+								pathname: `/recipe/${recipe.recipe_id}`,
+								state: {recipe: recipe.title}
+							}}>
+							View Recipe</Link>
+							</button>
+
 						</div>
 					</div>
 				);

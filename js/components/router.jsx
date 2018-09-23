@@ -1,10 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import Main from './main.jsx'
+import App from './App.jsx';
+import Recipe from './Recipe/Recipe.jsx';
 
 const Router = () => (
 	<BrowserRouter>
-		<Route path='/' component={Main}/>
+		<Switch>
+			<Route path='/' component={App} exact/>
+			<Route path='/recipe/:id' component={Recipe}/>		
+		</Switch>
 	</BrowserRouter>
 )
+
+export default Router;
