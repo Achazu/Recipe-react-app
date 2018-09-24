@@ -3,7 +3,7 @@
 	"version": "1.0.0",
 	"description": "",
 	"main": "index.js",
-	"homepage": "",
+	"homepage": "https://achazu.github.io/Recipe-react-app/",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"build": "webpack",
@@ -37,6 +37,7 @@
 	"dependencies": {
 		"bootstrap": "^3.3.7",
 		"copy-webpack-plugin": "^4.5.2",
+		"gh-pages": "^2.0.0",
 		"jquery": "^3.2.1",
 		"popper.js": "^1.12.9",
 		"react": "^15.4.0",
